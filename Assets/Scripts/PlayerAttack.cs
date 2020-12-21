@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAttack : MonoBehaviour
+public class PlayerAttack : MonoBehaviour, ICombat
 {
     [SerializeField] float _maxDistance;
     [SerializeField] float _maxAngle;
     [SerializeField] float damage;
+    [SerializeField] float healthPoints;
     List<Enemy> _currentEnemies;
 
     private void Start()
@@ -47,5 +48,16 @@ public class PlayerAttack : MonoBehaviour
         {
             _currentEnemies.Remove(enemy);
         }
+    }
+
+    public void TakeDamage(float inDamage)
+    {
+        healthPoints -= inDamage;
+        Debug.Log("Player zraniony. Poziom życia: " + healthPoints);
+    }
+
+    public void DealDamage(float inDamage)
+    {
+       
     }
 }

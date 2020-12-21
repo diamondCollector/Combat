@@ -647,8 +647,12 @@ MonoBehaviour:
   - {fileID: 220378348}
   - {fileID: 229721298}
   - {fileID: 546735718}
-  stoppingDuration: 1.2
+  _attackCooldown: 1
+  _stoppingDuration: 0
   _speed: 5
+  _attackDistance: 3
+  damage: 10
+  _maxAngle: 90
 --- !u!65 &1878883297
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -775,6 +779,7 @@ MonoBehaviour:
   _maxDistance: 5
   _maxAngle: 45
   damage: 5
+  healthPoints: 100
 --- !u!114 &2023633957
 MonoBehaviour:
   m_ObjectHideFlags: 0

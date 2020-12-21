@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour, ICombat
 
     public void DealDamage(float inDamage)
     {
-        
+
     }
 
     public void TakeDamage(float inDamage)
@@ -17,3 +17,4 @@ public class Enemy : MonoBehaviour, ICombat
         Debug.Log(this.name + " health: " + healthPoints);
     }
 }
+
