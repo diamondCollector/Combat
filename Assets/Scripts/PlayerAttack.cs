@@ -20,12 +20,8 @@ public class PlayerAttack : MonoBehaviour
         {
             for (int i = 0; i < _currentEnemies.Count; i++)
             {
-                if (Vector3.Distance(transform.position, _currentEnemies[i].transform.position) > _maxDistance ||
-                    Vector3.Angle(transform.position, _currentEnemies[i].transform.position) > _maxAngle)
-                {
-                    _currentEnemies.RemoveAt(i);
-                } 
-                else
+                if (Vector3.Distance(transform.position, _currentEnemies[i].transform.position) <= _maxDistance &&
+                    Vector3.Angle(transform.position, _currentEnemies[i].transform.position) <= _maxAngle)
                 {
                     _currentEnemies[i].TakeDamage(damage);
                 }
@@ -40,6 +36,16 @@ public class PlayerAttack : MonoBehaviour
         if (enemy != null && !_currentEnemies.Contains(enemy))
         {
             _currentEnemies.Add(enemy);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        var enemy = other.GetComponent<Enemy>();
+
+        if (enemy != null && _currentEnemies.Contains(enemy))
+        {
+            _currentEnemies.Remove(enemy);
         }
     }
 }
