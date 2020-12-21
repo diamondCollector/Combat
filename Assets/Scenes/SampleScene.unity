@@ -648,7 +648,7 @@ MonoBehaviour:
   - {fileID: 229721298}
   - {fileID: 546735718}
   _attackCooldown: 1
-  _stoppingDuration: 0
+  _stoppingDuration: 1.2
   _speed: 5
   _attackDistance: 3
   damage: 10
