@@ -31,7 +31,7 @@ public class Patrolling : MonoBehaviour
         }
         else
         {
-            HuntForPlayer();
+            ChasePlayer();
         }
 
         UpdateWaypoint();
@@ -50,7 +50,7 @@ public class Patrolling : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, _currentWaypoint.position, _speed * Time.deltaTime);
     }
 
-    private void HuntForPlayer()
+    private void ChasePlayer()
     {
         var enemyPosition = transform.position;
         var playerPosition = _playerToAttack.transform.position;
